@@ -7,20 +7,37 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="viewmodel.LoginFragment"
+        android:name="com.example.myphase2.viewmodel.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="viewmodel.RegisterFragment"
+        android:name="com.example.myphase2.viewmodel.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.example.myphase2.viewmodel.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <!--    <include app:graph="@navigation/my_nav2" />-->
 </navigation>

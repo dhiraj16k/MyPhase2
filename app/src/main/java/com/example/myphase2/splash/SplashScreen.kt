@@ -1,4 +1,4 @@
-package splash
+package com.example.myphase2.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
