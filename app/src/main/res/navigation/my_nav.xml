@@ -38,6 +38,16 @@
             android:id="@+id/action_profileFragment2_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.myphase2.viewmodel.BookmarkFragment"
+        android:label="fragment_bookmark"
+        tools:layout="@layout/fragment_bookmark" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.myphase2.viewmodel.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 
     <!--    <include app:graph="@navigation/my_nav2" />-->
 </navigation>

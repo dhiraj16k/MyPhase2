@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.myphase2.R
 import com.example.myphase2.databinding.FragmentProfileBinding
-import com.example.myphase2.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -29,7 +28,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
@@ -37,6 +35,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             firebaseAuth.signOut()
             checkUser()
         }
+
+//        with(binding.bottomNavigation){
+//            this?.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
+//                var fragment: Fragment? = null
+//                when(item.itemId){
+//                    R.id.nav_profile -> fragment = ProfileFragment()
+//                    R.id.nav_news -> fragment = NewsFragment()
+//                    R.id.nav_bookmark -> fragment = BookmarkFragment()
+//
+//                }
+//
+//            })
+//        }
 
     }
 
