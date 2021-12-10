@@ -5,16 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.example.myphase2.R
 import com.example.myphase2.databinding.FragmentProfileBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-
+    private var bottomNavigationView: BottomNavigationView? = null
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
@@ -36,19 +39,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             checkUser()
         }
 
-//        with(binding.bottomNavigation){
-//            this?.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
-//                var fragment: Fragment? = null
-//                when(item.itemId){
-//                    R.id.nav_profile -> fragment = ProfileFragment()
-//                    R.id.nav_news -> fragment = NewsFragment()
-//                    R.id.nav_bookmark -> fragment = BookmarkFragment()
-//
-//                }
-//
-//            })
-//        }
-
+        bottomNavigationView = binding.bottomNavigation
+        with(bottomNavigationView){
+            this?.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
+                var fragment: Fragment? = null
+                when(item.itemId){
+                    R.id.nav_profile -> fragment = ProfileFragment()
+                    R.id.nav_news -> fragment = NewsFragment()
+                    R.id.nav_bookmark -> fragment = BookmarkFragment()
+                }
+                parentFragmentManager.beginTransaction().replace(R.id.profileContainer, fragment!!).commit()
+                true
+            })
+        }
     }
 
     private fun checkUser() {
