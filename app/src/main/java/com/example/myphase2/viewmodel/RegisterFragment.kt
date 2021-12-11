@@ -1,6 +1,7 @@
 package com.example.myphase2.viewmodel
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.myphase2.BottomActivity
 import com.example.myphase2.R
 import com.example.myphase2.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -80,7 +82,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 val firebaseUser = firebaseAuth.currentUser
                 val email = firebaseUser!!.email
                 Toast.makeText(requireContext(), "Account Created", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToProfileFragment2())
+                val intent = Intent (activity, BottomActivity::class.java)
+                activity?.startActivity(intent)
+//                findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToMobileNavigation())
 
         }
             .addOnFailureListener{ e->

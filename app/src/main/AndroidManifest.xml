@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyPhase2">
         <activity
+            android:name=".BottomActivity"
+            android:exported="true"
+            android:label="@string/title_activity_bottom" />
+        <activity
             android:name=".SuccessfulActivity"
             android:exported="true" />
         <activity
@@ -26,7 +30,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

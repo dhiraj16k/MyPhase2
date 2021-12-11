@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewmodel.ProfileFragment"
-    android:id="@+id/profileContainer">
+    tools:context=".ui.profile.ProfileFragment">
 
     <TextView
         android:id="@+id/textView3"
@@ -45,23 +44,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.623" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="30dp"
-        android:elevation="3dp"
-        app:itemRippleColor="@android:color/transparent"
-        app:itemIconSize="30dp"
-        app:labelVisibilityMode="unlabeled"
-        android:background="@drawable/rounded_corner"
-        app:itemIconTint="@drawable/item_selector"
-        app:menu="@menu/bottom_menu"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.myphase2.viewmodel
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.myphase2.BottomActivity
 import com.example.myphase2.R
 import com.example.myphase2.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -77,7 +79,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 val firebaseUser = firebaseAuth.currentUser
                 val email = firebaseUser!!.email
                 Toast.makeText(requireContext(),"Logged In as $email", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment2())
+                val intent = Intent (activity, BottomActivity::class.java)
+                activity?.startActivity(intent)
+//                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment2())
             }
             .addOnFailureListener{ e->
                 progressDialog.dismiss()
@@ -88,7 +92,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null){
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment2())
+            val intent = Intent (activity, BottomActivity::class.java)
+            activity?.startActivity(intent)
+//            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMobileNavigation())
 
         }
     }
