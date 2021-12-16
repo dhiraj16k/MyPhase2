@@ -12,6 +12,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.example.myphase2.databinding.FragmentNewsBinding
 import java.util.ArrayList
+import android.util.Log
 
 class NewsFragment : Fragment(), NewsItemClicked {
 
@@ -52,9 +53,9 @@ class NewsFragment : Fragment(), NewsItemClicked {
 //    }
 
     private fun fetchData() {
-
-        val url = "https://newsapi.org/v2/top-headlines?country=in&category=science&piKey=1f4a12d2698e432ea9cf18126dcc7acd"
-        val jsonObjectRequest = JsonObjectRequest(
+        val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=2a469e99aed34f6c95a13af4f855058c"
+        Log.d("","")
+        val jsonObjectRequest = object : JsonObjectRequest(
             Request.Method.GET,
             url,
             null,
@@ -77,12 +78,18 @@ class NewsFragment : Fragment(), NewsItemClicked {
 
             }
         )
+        {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["User-Agent"] = "Chrome/5.0"
+                return headers
+            }
+        }
         MySingleton.getInstance(this.requireContext()).addToRequestQueue(jsonObjectRequest)
     }
     override fun onItemClicked(item: News) {
         val builder = CustomTabsIntent.Builder()
         val customTabsIntent = builder.build()
         customTabsIntent.launchUrl(this.requireContext(), Uri.parse(item.url))
-//        Toast.makeText(this.requireContext(), "Clicked item $item", Toast.LENGTH_SHORT).show()
     }
 }
