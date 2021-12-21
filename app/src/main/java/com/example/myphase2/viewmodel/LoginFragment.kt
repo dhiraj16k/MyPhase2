@@ -81,7 +81,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 Toast.makeText(requireContext(),"Logged In as $email", Toast.LENGTH_SHORT).show()
                 val intent = Intent (activity, BottomActivity::class.java)
                 activity?.startActivity(intent)
-//                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToProfileFragment2())
+//                finish()
             }
             .addOnFailureListener{ e->
                 progressDialog.dismiss()
@@ -94,10 +94,13 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         if (firebaseUser != null){
             val intent = Intent (activity, BottomActivity::class.java)
             activity?.startActivity(intent)
-//            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMobileNavigation())
-
+//            finish()
         }
     }
+
+//    private fun finish() {
+//        finish()
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

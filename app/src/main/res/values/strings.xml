@@ -5,4 +5,7 @@
     <string name="title_news">News</string>
     <string name="title_bookmark">Bookmark</string>
     <string name="title_profile">Profile</string>
+    <string name="by_dhiraj">By Dhiraj</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="todo">TODO</string>
 </resources>

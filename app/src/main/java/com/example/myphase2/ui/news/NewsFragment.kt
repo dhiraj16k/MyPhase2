@@ -54,7 +54,7 @@ class NewsFragment : Fragment(), NewsItemClicked {
 
     private fun fetchData() {
         val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=2a469e99aed34f6c95a13af4f855058c"
-        Log.d("","")
+//        Log.d("","")
         val jsonObjectRequest = object : JsonObjectRequest(
             Request.Method.GET,
             url,

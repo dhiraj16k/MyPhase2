@@ -84,14 +84,17 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                 Toast.makeText(requireContext(), "Account Created", Toast.LENGTH_SHORT).show()
                 val intent = Intent (activity, BottomActivity::class.java)
                 activity?.startActivity(intent)
-//                findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToMobileNavigation())
-
+//                finish()
         }
             .addOnFailureListener{ e->
                 progressDialog.dismiss()
                 Toast.makeText(requireContext(), "Registration Failed Due to ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+//    private fun finish() {
+//        finish()
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

@@ -46,14 +46,13 @@ class ProfileFragment : Fragment() {
         else{
             val intent = Intent (activity, MainActivity::class.java)
             activity?.startActivity(intent)
-            finish()
-//            findNavController().navigate(ProfileFragmentDirections.actionProfileFragment2ToLoginFragment())
+//            finish()
         }
     }
 
-    private fun finish() {
-        finish()
-    }
+//    private fun finish() {
+//        finish()
+//    }
 
 
     override fun onDestroyView() {
